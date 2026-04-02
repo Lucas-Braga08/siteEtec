@@ -1,0 +1,208 @@
+/* ===== ABAS ===== */
+.tabs-container {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #ddd;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 15px 20px;
+    font-size: 1em;
+    font-weight: 600;
+    color: #666;
+    cursor: pointer;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+    position: relative;
+    bottom: -2px;
+}
+
+.tab-btn:hover {
+    color: #cf2e2e;
+}
+
+.tab-btn.active {
+    color: #cf2e2e;
+    border-bottom-color: #cf2e2e;
+}
+
+/* ===== CONTEÚDO DAS ABAS ===== */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ===== GRID DE CURSOS ===== */
+.cursos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+/* ===== CARDS DE CURSOS EXPANSÍVEIS ===== */
+.curso-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-left: 4px solid #cf2e2e;
+    border-radius: 3px;
+    overflow: hidden;
+    transition: 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.curso-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    border-left-width: 6px;
+}
+
+.curso-header {
+    background: linear-gradient(135deg, #f9f9f9, #fff);
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.curso-header h3 {
+    color: #cf2e2e;
+    margin: 0;
+    font-size: 1.3em;
+}
+
+.curso-body {
+    padding: 20px;
+    color: #555;
+    line-height: 1.6;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.curso-body p {
+    margin-bottom: 12px;
+    font-size: 0.9em;
+    text-align: justify;
+    flex-grow: 1;
+}
+
+.curso-body strong {
+    color: #333;
+}
+
+.curso-body ul {
+    margin-left: 20px;
+    padding: 0;
+}
+
+.curso-body li {
+    margin-bottom: 8px;
+    font-size: 0.9em;
+}
+
+/* ===== INFORMAÇÕES COMPACTAS ===== */
+.info-compacta {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.info-compacta span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 0.85em;
+    color: #666;
+}
+
+.info-compacta strong {
+    color: #cf2e2e;
+    font-size: 0.9em;
+    display: block;
+    margin-bottom: 3px;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 1000px) {
+    .cursos-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .tabs-container {
+        flex-direction: column;
+        border-bottom: none;
+    }
+
+    .tab-btn {
+        border-bottom: 3px solid #ddd;
+        bottom: 0;
+        text-align: left;
+    }
+
+    .tab-btn.active {
+        border-bottom-color: #cf2e2e;
+    }
+
+    .cursos-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .tab-btn {
+        padding: 12px 15px;
+        font-size: 0.9em;
+    }
+
+    .curso-header {
+        padding: 15px;
+    }
+
+    .curso-header h3 {
+        font-size: 1.1em;
+    }
+
+    .curso-body {
+        padding: 15px;
+    }
+
+    .curso-body p {
+        font-size: 0.85em;
+    }
+
+    .info-compacta {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .info-compacta span {
+        font-size: 0.8em;
+    }
+}
