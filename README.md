@@ -1,2 +1,2 @@
 # SiteEtec
-Recriação so site da Etec da Zona Leste em PW2
+Recriação so site da Etec da Zona Leste para a matéria de PW2
